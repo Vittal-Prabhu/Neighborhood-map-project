@@ -172,7 +172,8 @@ window.onload = function() {
       self.placeList.push(item);
     });
     self.placeListClone = self.placeList;
-    //Filtering list based on search
+    //Filtering list based on search by using filtering an array using ko
+    //Attribution: (http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html)
     self.placeListClone = ko.computed(function() {
       var filter = this.searchbar().toLowerCase();
       if (!filter) {
