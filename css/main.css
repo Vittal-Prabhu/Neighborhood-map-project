@@ -1,63 +1,86 @@
-html,body {
-        font-family: Arial, sans-serif;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+.container {
+  font-family: Verdana, Geneva, sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-      .container {
-        height: 100%;
-        position: relative;
-      }
+input {
+  font-size: 12px;
+}
 
-      input {
-        font-size: 12px;
-      }
+h1 {
+  color: #e6f2ff;
+  font-size: 22px;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
 
-      h1 {
-        color: #525454;
-        font-size: 22px;
-        margin: 0 0 10px 0;
-        text-align: center;
-      }
+#map {
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0px;
+}
 
-      #hide-listings,
-      #show-listings {
-        width: 48%;
-      }
+.options-box {
+  color: white;
+  position: relative;
+  background: black;
+  height: 100%;
+  line-height: 25px;
+  text-align: left;
+  width: 250px;
+}
 
-      #map {
-        bottom:0px;
-        height: 100%;
-        left: 362px;
-        position: absolute;
-        right: 0px;
-      }
+#placeList {
+  display: block;
+  height: 150px;
+  overflow-y: scroll;
+  padding-bottom: 20px;
+}
 
-      .options-box {
-        background: #fff;
-        border: 1px solid #999;
-        border-radius: 3px;
-        height: 100%;
-        line-height: 35px;
-        padding: 10px 10px 30px 10px;
-        text-align: left;
-        width: 340px;
-      }
+#searchBar {
+  margin: 0px;
+  background-color: #fff;
+  width: 90%;
+  font-size: 15px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  border: 1px solid transparent;
+  border-radius: 2px 2px 2px 2px;
+  box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-      #searchBar {
-    margin: 0px;
-    background-color: #fff;
-    padding: 0 11px 0 13px;
-    width: 100%;
-    font-size: 15px;
-    font-weight: 300;
-    text-overflow: ellipsis;
-    border: 1px solid transparent;
-    border-radius: 2px 0 0 2px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    height: 32px;
-    outline: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+#details {
+  position: relative;
+  margin: 0px;
+  background-color: #fff;
+}
+
+.fs-photo {
+  display: inline;
+  margin: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  #placeList {
+    display: block;
+    height: 100px;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+  }
+
+  .fs-photo {
+    display: inline;
+    margin: 5px;
+  };
 }
