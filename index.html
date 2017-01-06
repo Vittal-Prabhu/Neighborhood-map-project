@@ -1,0 +1,29 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Map Project</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8hsBzXC2XahwLAtKvYHI7Ebconsn1R5c&callback=initMap" defer async>
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="options-box">
+        <h1>The Manglore City Map</h1>
+        <div>
+          <input id="searchBar" placeholder="Filter here for food shopping and stay" type="text" data-bind="textInput: searchbar, valueUpdate: 'afterkeydown'">
+          <p>Value is <span data-bind="text:searchbar"></span></p>
+          <ul data-bind="foreach: placeListClone">
+          <li class="filtList" id="" data-bind="text: title, attr: {id: id}, click:$parent.giveInfo"></li>
+          </ul>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
+    <script src="js/knockout-3.4.1.js"></script>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+  </html>
