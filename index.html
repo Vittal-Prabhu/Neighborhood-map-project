@@ -6,28 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neighborhood Map Project</title>
   <link rel="stylesheet" href="css/main.css">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8hsBzXC2XahwLAtKvYHI7Ebconsn1R5c&callback=initMap" defer async>
-  </script>
 </head>
 
 <body>
-  <div class="container">
-    <div id="map"></div>
-    <div class="options-box">
+  <main class="container">
+    <section id="map"></section>
+    <section class="options-box">
       <h1>Manglore City Map</h1>
-      <div>
+      <nav>
         <input id="searchBar" placeholder="Filter from list below" type="text" data-bind="textInput: searchbar, valueUpdate: 'afterkeydown'">
-        <div id="placeList">
+        <aside id="placeList">
           <ul data-bind="foreach: placeListClone">
             <li class="filtList" id="" data-bind="text: title, attr: {id: id}, click:$parent.giveInfo"></li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+        </aside>
+      </nav>
+    </section>
+  </main>
   <script src="js/knockout-3.4.1.js"></script>
   <script src="js/jquery-3.1.0.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8hsBzXC2XahwLAtKvYHI7Ebconsn1R5c&callback=initMap" defer async onerror="mapLoadError()">
+  </script>
 </body>
 
 </html>
