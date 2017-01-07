@@ -112,6 +112,7 @@ function initMap() {
   map.fitBounds(bounds);
 }
 
+//Photos Search powered by Foursquare app: 'https://foursquare.com/developers/app'
 //Inserting place title and photos from four square in markers when clicked
 function populateInfoWindow(marker, infowindow) {
   if (infowindow.marker != marker) {
@@ -131,6 +132,7 @@ function populateInfoWindow(marker, infowindow) {
           updatedContent = updatedContent + '<p>Photos from FourSquare</p>';
           var fsURL = data.response.venue.canonicalUrl;
           var photo = data.response.venue.photos.groups[0].items;
+          !!photo? photo=photo: photo= 'No photo provided';
           for (var i = 0; i < 2; i++) {
             updatedContent = updatedContent + '<div class="fs-photo"><a target="_blank" href="' + fsURL + '"><img src="' + photo[i].prefix + '50x50' + photo[i].suffix + '"></a></div>';
           }
@@ -144,6 +146,10 @@ function populateInfoWindow(marker, infowindow) {
       });
     }
     infowindow.open(map, marker);
+    //If a marker is selected previously then the previous marker will set to default icon
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+    }
     marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
     infowindow.addListener('closeclick', function() {
       infowindow.marker = null;
@@ -209,3 +215,7 @@ window.onload = function() {
   }
   ko.applyBindings(new MyViewModel());
 };
+
+function mapLoadError() {
+    alert('Loading Google maps failed');
+}
